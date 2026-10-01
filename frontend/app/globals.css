@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #09090b;
+  --foreground: #f5f5f4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  background-image: radial-gradient(ellipse at 50% -22%, rgb(16 80 57 / 24%), transparent 46%);
+  background-attachment: fixed;
+}
+
+::selection {
+  color: #09090b;
+  background: #34d399;
+}
+
+:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 3px;
+}
+
+.page-shell {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: #fbbf24;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.field-control {
+  width: 100%;
+  border: 1px solid #3f3f46;
+  border-radius: 0.5rem;
+  background: #18181b;
+  padding: 0.75rem 0.875rem;
+  color: #f5f5f4;
+}
+
+.field-control::placeholder {
+  color: #a1a1aa;
+}
+
+.field-control:focus {
+  border-color: #10b981;
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(16 185 129 / 14%);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #d6d3d1;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
